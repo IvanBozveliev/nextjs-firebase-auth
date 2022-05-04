@@ -4,8 +4,13 @@ import Link from 'next/link';
 
 const Register = () => {
 
-    function registerHandler() {
-        console.log('work')
+    function registerHandler(e) {
+        e.preventDefault()
+        let formData = new FormData(e.currentTarget);
+
+        let email = formData.get('email');
+        let password = formData.get('password');
+        console.log(password)
     }
 
     return (

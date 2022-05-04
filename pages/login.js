@@ -3,9 +3,17 @@ import Link from 'next/link';
 
 const Login = () => {
 
-    function loginHandler() {
-        console.log('work')
+    function loginHandler(e) {
+        e.preventDefault()
+        let formData = new FormData();
+
+        let email = formData.email;
+        let password = formData.password;
+
+
     }
+
+
 
     return (
         <div className={styles.registerContent}>
