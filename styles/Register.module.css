@@ -18,10 +18,11 @@
 
 
 #registerForm {
-    /* display: block; */
+    display: inline-block;
     margin: auto;
     padding-right: 50px;
     padding-left: 26px;
+
 }
 
 #submitBtn {
@@ -29,7 +30,7 @@
     box-sizing: border-box;
     background-color: rgb(138 43 226);
     color: white;
-    margin-left: 26px;
+    margin-left: 76px;
     margin-top: 42px;
     padding: 10px;
     cursor: pointer;
@@ -43,11 +44,26 @@
     box-sizing: border-box;
     background-color: rgb(34, 34, 34);
     color: white;
-    margin-left: 26px;
+    margin-left: 76px;
     margin-top: 42px;
     padding: 10px;
     cursor: pointer;
     margin-bottom: 20px;
     border-radius: 8px;
     border: 1px solid rgb(252, 252, 252);
+}
+
+#textField {
+
+
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    /* background-color: blueviolet; */
+    background-color: #892be200;
+    padding: 8px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+
 }
