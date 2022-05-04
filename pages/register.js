@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { useAuth } from '../context/authContext'
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const Register = () => {
 
     const { user, register } = useAuth();
+    const [error, setError] = useState(null);
+    const router = useRouter();
 
     async function registerHandler(e) {
         e.preventDefault();
@@ -16,8 +19,9 @@ const Register = () => {
 
         try {
             await register(email, password)
+            router.push('/main')
         } catch (err) {
-            console.log(err)
+            setError(err)
         }
 
 
@@ -25,6 +29,7 @@ const Register = () => {
 
     return (
         <div className={styles.registerContent}>
+            {error ? (<div>{error.message}</div>) : null}
             <h2>Register Form</h2>
             <form method='POST' id={styles.registerForm} onSubmit={registerHandler}>
                 <label htmlFor='inputText'>Email:</label>

@@ -1,9 +1,13 @@
 import styles from '../styles/Main.module.css'
 
 const Main = () => {
-    <div className={styles.mainContainer}>
+    return (
+        <div className={styles.mainContainer}>
+            <img src='../welcome.png' width={700} height={200} />
 
-    </div>
+        </div>
+    )
+
 }
 
 export default Main;

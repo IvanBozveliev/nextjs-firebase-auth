@@ -1,18 +1,24 @@
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
 import { useAuth } from '../context/authContext';
+import { useRouter } from 'next/router';
+
 const Login = () => {
+
+    let { user, login } = useAuth();
+    const router = useRouter();
 
     async function loginHandler(e) {
         e.preventDefault();
-        let { user, login } = useAuth()
-        let formData = new FormData();
 
-        let email = formData.email;
-        let password = formData.password;
+        let formData = new FormData(e.currentTarget);
+
+        let email = formData.get('email');
+        let password = formData.get('password');
 
         try {
             await login(email, password)
+            router.push('/main')
         } catch (err) {
             console.log(err)
         }

@@ -21,6 +21,20 @@
     background-color: rgb(86, 21, 148);
 }
 
+.headerContent p {
+    color: rgb(253, 253, 253);
+    text-decoration: none;
+
+}
+
+.headerContent p:hover {
+    color: rgb(253, 253, 253);
+    text-decoration: underline;
+
+    background-color: rgb(86, 21, 148);
+    cursor: pointer;
+}
+
 .linkContent {
     display: flex;
 }
