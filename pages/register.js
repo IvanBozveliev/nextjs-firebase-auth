@@ -1,16 +1,26 @@
 import { useState } from 'react';
+import { useAuth } from '../context/authContext'
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
 
 const Register = () => {
 
-    function registerHandler(e) {
-        e.preventDefault()
+    const { user, register } = useAuth();
+
+    async function registerHandler(e) {
+        e.preventDefault();
         let formData = new FormData(e.currentTarget);
 
         let email = formData.get('email');
         let password = formData.get('password');
-        console.log(password)
+
+        try {
+            await register(email, password)
+        } catch (err) {
+            console.log(err)
+        }
+
+
     }
 
     return (

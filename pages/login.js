@@ -1,15 +1,21 @@
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
-
+import { useAuth } from '../context/authContext';
 const Login = () => {
 
-    function loginHandler(e) {
-        e.preventDefault()
+    async function loginHandler(e) {
+        e.preventDefault();
+        let { user, login } = useAuth()
         let formData = new FormData();
 
         let email = formData.email;
         let password = formData.password;
 
+        try {
+            await login(email, password)
+        } catch (err) {
+            console.log(err)
+        }
 
     }
 
