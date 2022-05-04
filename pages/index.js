@@ -1,8 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import { Register } from './register';
-import { Login } from './login';
-import { NavBar } from '../components/Navbar';
+
 
 import styles from '../styles/Home.module.css'
 
@@ -11,11 +9,8 @@ export default function Home() {
 
     <div className={styles.container}>
 
+      <h1>WELCOME</h1>
 
-      <NavBar />
-
-      <Register />
-      <Login />
     </div>
     // <div className={styles.container}>
     // <Head>

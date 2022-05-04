@@ -1,6 +1,7 @@
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
-export const Login = () => {
+
+const Login = () => {
 
     function loginHandler() {
         console.log('work')
@@ -16,8 +17,10 @@ export const Login = () => {
                 <input type='password' name='password' id={styles.textField} />
                 <input type='submit' id={styles.submitBtn} value='Submit' />
             </form>
-            <Link href='/register.js'><a>register</a></Link>
+            <Link href='/register'><a>register</a></Link>
         </div>
 
     )
 }
+
+export default Login

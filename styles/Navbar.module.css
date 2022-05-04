@@ -1,7 +1,6 @@
 .headerContent {
     margin: auto;
     width: 97%;
-    float: left;
     font-weight: bold;
     padding: 20px;
     background-color: blueviolet;
@@ -22,8 +21,21 @@
     background-color: rgb(86, 21, 148);
 }
 
-.webTitle {
+.linkContent {
     display: flex;
+}
+
+.linkContent>p {
+    margin-top: 0px;
+    font-size: 20px;
+    color: rgb(253, 253, 253);
+    margin-left: 22px;
+    font-family: cursive;
+}
+
+/* .webTitle {
+    display: flex;
+    background-color: red;
     justify-content: space-between;
 }
 
@@ -33,7 +45,7 @@
     color: rgb(253, 253, 253);
     margin-left: 22px;
     font-family: cursive;
-}
+} */
 
 #weclome-user {
     float: left;
@@ -42,10 +54,7 @@
     text-decoration: underline
 }
 
-.navigationHeader {
-    display: flex;
-    flex-wrap: wrap;
-}
+
 
 @media only screen and (max-width: 1025px) {
     .headerContent {

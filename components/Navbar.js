@@ -4,14 +4,11 @@ import Link from 'next/link';
 export const NavBar = () => {
     return (
         <div className={styles.headerContent}>
-            <div className='webTitle'>
-                <p><Link href='/login' >Login</Link></p>
-                <p><Link href='/register' >Register</Link></p>
-                <nav className='navigationHeader'>
+            <div className={styles.linkContent}>
 
-                    {/* {isAuth ? loggedInUser() : loggedOutUser()} */}
-
-                </nav>
+                <p><Link href='/login' ><a>Login</a></Link></p>
+                <p><Link href='/register' ><a>Register</a></Link></p>
+                {/* {isAuth ? loggedInUser() : loggedOutUser()} */}
 
             </div>
 

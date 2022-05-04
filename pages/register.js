@@ -2,7 +2,7 @@ import { useState } from 'react';
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
 
-export const Register = () => {
+const Register = () => {
 
     function registerHandler() {
         console.log('work')
@@ -23,3 +23,5 @@ export const Register = () => {
 
     )
 }
+
+export default Register
