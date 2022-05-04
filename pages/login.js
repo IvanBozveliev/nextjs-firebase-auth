@@ -1,12 +1,22 @@
 import styles from '../styles/Register.module.css';
+
 import Link from 'next/link';
 import { useAuth } from '../context/authContext';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 const Login = () => {
 
     let { user, login } = useAuth();
+    let [error, setError] = useState('');
+
     const router = useRouter();
+
+    useEffect(() => {
+        setTimeout(() => {
+            setError('')
+        }, 4000)
+    }, [error])
 
     async function loginHandler(e) {
         e.preventDefault();
@@ -20,7 +30,14 @@ const Login = () => {
             await login(email, password)
             router.push('/main')
         } catch (err) {
-            console.log(err)
+
+            let errorMessage = err.code;
+            if (errorMessage == 'auth/invalid-email') {
+                setError('This email is not valid')
+            } else if (errorMessage == 'auth/wrong-password') {
+                setError('Wrong password')
+            }
+
         }
 
     }
@@ -29,6 +46,7 @@ const Login = () => {
 
     return (
         <div className={styles.registerContent}>
+            {error ? <div className={styles.errorMessage}>{error}</div> : null}
             <h2>Login Form</h2>
             <form method='POST' id={styles.registerForm} onSubmit={loginHandler}>
                 <label htmlFor='inputText'>Email:</label>

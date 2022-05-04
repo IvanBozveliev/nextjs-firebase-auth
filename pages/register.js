@@ -7,8 +7,15 @@ import { useRouter } from 'next/router';
 const Register = () => {
 
     const { user, register } = useAuth();
-    const [error, setError] = useState(null);
+    const [error, setError] = useState('');
     const router = useRouter();
+
+    useEffect(() => {
+        setTimeout(() => {
+            setError('')
+        }, 4000)
+    }, [error])
+
 
     async function registerHandler(e) {
         e.preventDefault();
@@ -21,7 +28,12 @@ const Register = () => {
             await register(email, password)
             router.push('/main')
         } catch (err) {
-            setError(err)
+
+            let errorMessage = err.code;
+
+            if (errorMessage == 'auth/invalid-email') {
+                setError('This email is not valid')
+            }
         }
 
 
