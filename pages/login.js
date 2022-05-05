@@ -7,7 +7,7 @@ import { useEffect, useState } from 'react';
 
 const Login = () => {
 
-    let { user, login } = useAuth();
+    let { login } = useAuth();
     let [error, setError] = useState('');
 
     const router = useRouter();
