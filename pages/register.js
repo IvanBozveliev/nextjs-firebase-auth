@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '../context/authContext'
 import styles from '../styles/Register.module.css';
 import Link from 'next/link';
@@ -6,7 +6,7 @@ import { useRouter } from 'next/router';
 
 const Register = () => {
 
-    const { user, register } = useAuth();
+    const { register } = useAuth();
     const [error, setError] = useState('');
     const router = useRouter();
 
